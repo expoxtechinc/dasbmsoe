@@ -1,11 +1,13 @@
 {
-  "buildCommand": "pnpm install && pnpm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist/public",
-  "framework": "vite",
+  "framework": null,
+  "installCommand": "npm install",
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "BASE_PATH": "/"
+  }
 }

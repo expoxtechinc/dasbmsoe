@@ -460,6 +460,97 @@ h1, h2, h3, h4, h5, h6 {
   animation: pulse-ring 2s infinite;
 }
 
+/* ===== MOBILE BOTTOM NAV ===== */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 17, 35, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6px 4px;
+  padding-bottom: env(safe-area-inset-bottom, 6px);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  padding: 4px 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-nav-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-icon.active {
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.mobile-nav-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Add bottom padding to main content so it clears the mobile nav */
+.has-mobile-nav {
+  padding-bottom: 80px;
+}
+
+/* Scroll to top adjusted for mobile */
+@media (max-width: 768px) {
+  .scroll-top {
+    bottom: 90px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  .whatsapp-float {
+    bottom: 90px;
+    right: 65px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile hero adjustments */
+@media (max-width: 640px) {
+  .mobile-hero-text { font-size: 1.875rem; line-height: 1.2; }
+}
+
+/* Card hover disabled on touch */
+@media (hover: none) {
+  .card-glow:hover { transform: none; }
+  .btn-gold:hover { transform: none; }
+  .btn-blue:hover { transform: none; }
+  .gallery-img:hover { transform: none; }
+}
+
 @layer utilities {
   input[type="search"]::-webkit-search-cancel-button { @apply hidden; }
   [contenteditable][data-placeholder]:empty::before {
